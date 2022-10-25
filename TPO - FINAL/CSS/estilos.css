@@ -1,0 +1,314 @@
+
+* {
+    margin: 0px;
+	padding: 0px;
+	box-sizing: border-box; /*para que no se produzca desvordamiento*/
+}
+
+html {
+    font-size: 62%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;/*altura de linea de texto*/
+}
+
+a{
+    color:#ffffff;
+    text-decoration: none; /*elimina toda decoración como subrayado*/
+    text-transform: uppercase;/*muestra todo el texto con letras mayúsculas*/
+    padding:0 15px; /*0 indica espacio arriba y abajo, 15 se aplica a derecha e izquierda*/
+    font-size: 2rem;
+    letter-spacing: 2px;/*Define el espacio entre los caracteres*/
+}
+
+a:hover{
+    color:black;
+
+    transition-property: all; /*Especifico que quiero modificar todas las propiedades*/
+    transition-duration: 1s; /*con una duración de 2s*/
+    transition-timing-function: ease-in; /*Controla el tiempo de entrada y salida*/
+    transition-width 3s; 
+}
+
+.contenedor{
+    display: flex; /*definimos modelo flexbox(caja flexible)*/    
+    flex-flow: column nowrap; /*para que todo se adapte al tamaño establecido*/
+}
+
+.header{
+    background: url(../imagen/familia2.jpg);
+    background-position: center; /*que esté centrado*/
+    background-attachment: contain;/*Que se fije al contenedor*/
+    background-size: cover;/*cambia el tamaño de la imagen de fondo para cubrir todo el contenedor*/
+    display: flex;
+    flex-flow: column nowrap;/*el eje principal es la columna y los elementos son distribuidos en una sola linea*/
+    height: 600px;
+}
+
+.header-paquete{
+    background: url(../imagen/egresados.jpg);
+    background-position: center; /*que esté centrado*/
+    background-attachment: contain;/*Que se fije al contenedor*/
+    background-size: cover;/*cambia el tamaño de la imagen de fondo para cubrir todo el contenedor*/
+    display: flex;
+    flex-flow: column nowrap;/*el eje principal es la columna y los elementos son distribuidos en una sola linea*/
+    height: 600px;
+}
+
+.header-nosotros{
+    background: url(../imagen/jubilados.jpg);
+    background-position: center; /*que esté centrado*/
+    background-attachment: contain;/*Que se fije al contenedor*/
+    background-size: cover;/*cambia el tamaño de la imagen de fondo para cubrir todo el contenedor*/
+    display: flex;
+    flex-flow: column nowrap;/*el eje principal es la columna y los elementos son distribuidos en una sola linea*/
+    height: 600px;
+}
+
+.header-jubilados{
+    background: url(../imagen/jubilados2.jpg);
+    background-position: center; /*que esté centrado*/
+    background-attachment: contain;/*Que se fije al contenedor*/
+    background-size: cover;/*cambia el tamaño de la imagen de fondo para cubrir todo el contenedor*/
+    display: flex;
+    flex-flow: column nowrap;/*el eje principal es la columna y los elementos son distribuidos en una sola linea*/
+    height: 600px;
+}
+
+.nos .pasos a{
+    font-size: 2rem;
+    padding: 0px 0px;
+    letter-spacing: 1px;/*Define el espacio entre los caracteres*/  
+}
+
+.pasos {
+    text-align: left; 
+    text-align: justify;  
+    padding-left: 20px;
+}
+
+.menu{
+    background: rgba(0, 0, 0, .1);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+}
+
+.logo{
+    flex: 2  1 auto;/*1 factor de crecimiento 1 factor de contraccion auto determina el tamaño de la caja*/
+}
+
+.nav{                                                                
+    flex: 6  1 auto;
+}
+
+.social{ 
+    flex: 1  1 auto;   
+    display: flex; 
+    flex-flow: row nowrap;                                                                 
+}
+
+.texto-principal{
+    color: #ffffff;
+    margin-top: 100px;
+    text-align: center; 
+    /*line-height: 3*/
+}
+
+.section{    
+    display: flex;   
+}    
+
+.promos{
+    background: #ccccd3;
+    flex: 2 1 auto;
+    display: flex;  
+    flex-flow: row wrap; 
+    align-items: center;
+}
+
+.paquetes{    
+    flex: auto;
+    display: flex;    
+    flex-flow: column wrap;
+    padding:  5px 5px;
+}
+
+.elementos{
+    background: #ce56b0;
+    padding: 10px 10px; /*0 indica espacio arriba y abajo, 15 se aplica a derecha e izquierda*/
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: right;
+}
+
+.elementos img{
+    width: 500px;
+} 
+
+.paquetes h2{
+    text-align: center;   
+    background: #ce56b0;
+}
+
+.excursiones{    
+    background: #381faa;
+    display: flex;
+    flex-flow: row wrap;    
+    justify-content: space-between; /*distribuye los items agregando espacioes entre los elementos*/
+    align-items: center;
+    padding: 10px 10px;    
+    animation-name: cambiarColor;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    /* animation: cambiarColor 2s 1s; */
+}
+.excursiones h3{
+    text-align: center;
+}
+
+.excursiones img{
+    width: 300px;
+}  
+
+.nos{
+    background: #E1CEB5;
+    display: flex;
+    padding: 10px 10px; /*arriba y abajo,derecha e izquierda*/
+    font-size: 2rem;
+    display: flex;
+    flex-flow: column nowrap;    
+    line-height: 2;/*altura de linea de texto*/
+    text-align: center;
+    align-items: center;  
+    animation-name: cambiarColor;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    /* animation: cambiarColor 2s 1s; */
+}
+/*Animacion background sections excursiones y sections de página JUBILADOS y NOSOTROS*/
+@keyframes cambiarColor {
+    from {background-color: rgb(0, 217, 255);}
+    to {background-color: rgb(0, 255, 162);}
+}
+
+
+.article img{
+    width: 400px;
+    height: 350px;  
+} 
+
+.article{    
+    flex: 1 1 auto;
+    color: #ccccd3;
+    padding:10px 5px;  
+}
+             
+                                                                        
+.article  a, .article  h3{
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-top: -80px;
+    font-size: 2rem;
+    text-transform: uppercase;/*muestra todo el texto con letras mayúsculas*/
+}
+
+.article h3:hover{
+    color:#cf2424;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
+.footer{
+    display: flex;    
+    justify-content: center;
+}
+
+.pie{
+    background: #8BBCCC;    
+    flex-flow: row wrap;   
+    width: 100%;   
+    text-align: center;    
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+@media all and (max-width: 1000px){
+    .section{
+        flex-direction: column;
+    }
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+    .article img{
+        width: 300px;
+        height: 300px;
+    } 
+}
+
+@media all and (max-width: 800px){
+    .section{
+        flex-direction: column;
+    }
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+    .article img{
+        width: 200px;
+        height: 200px;
+    } 
+
+    .paquetes{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .article  a, .article  h3{
+        font-size: 1rem;
+    }
+    
+}
+
+@media all and (max-width: 600px){
+    .article{
+        flex-direction: column;
+    }
+    .article img{
+        width: 200px;
+        height: 200px;
+    } 
+
+    .article  a, .article  h3{
+        font-size: 1rem;
+    }
+
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+}
+
